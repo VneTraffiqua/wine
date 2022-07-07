@@ -32,12 +32,12 @@ def main():
     )
     wine_table = excel_data_df.to_dict(orient='index')
     wine_row = [wine_table[row] for row in wine_table]
-    grouped_vines = collections.defaultdict(list)
-    [grouped_vines[vine['Категория']].append(vine) for vine in wine_row]
+    grouped_wines = collections.defaultdict(list)
+    [grouped_wines[wine['Категория']].append(wine) for wine in wine_row]
 
     rendered_page = template.render(
         age=datetime.date.today().year - int(os.getenv('WORKING_SINCE')),
-        vines=grouped_vines
+        wines=grouped_wines
     )
 
     with open('index.html', 'w', encoding="utf8") as file:
