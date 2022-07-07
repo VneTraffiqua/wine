@@ -30,10 +30,10 @@ def main():
         sheet_name=os.getenv('SHEET_NAME'), 
         keep_default_na=False
     )
-    wine_dict = excel_data_df.to_dict(orient='index')
-    vine_list = [wine_dict[dic] for dic in wine_dict]
+    wine_table = excel_data_df.to_dict(orient='index')
+    wine_row = [wine_table[row] for row in wine_table]
     grouped_vines = collections.defaultdict(list)
-    [grouped_vines[vine['Категория']].append(vine) for vine in vine_list]
+    [grouped_vines[vine['Категория']].append(vine) for vine in wine_row]
 
     rendered_page = template.render(
         age=datetime.date.today().year - int(os.getenv('WORKING_SINCE')),
