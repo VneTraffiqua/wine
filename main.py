@@ -9,8 +9,15 @@ import argparse
 
 
 def main():
-    parser = argparse.ArgumentParser(description='Разворачивает wine при запуске')
-    parser.add_argument('-e', '--env_path', help='Укажите путь к файлу конфигурации', default='.env')
+    parser = argparse.ArgumentParser(
+        description='Разворачивает wine при запуске'
+    )
+    parser.add_argument(
+        '-e',
+        '--env_path',
+        help='Укажите путь к файлу конфигурации',
+        default='.env'
+    )
     env_path = parser.parse_args()
     load_dotenv(env_path.env_path)
     env = Environment(
@@ -18,9 +25,13 @@ def main():
         autoescape=select_autoescape(['html', 'xml'])
     )
     template = env.get_template('base.html')
-    excel_data_df = pandas.read_excel(os.getenv('FILE_PATH'), sheet_name=os.getenv('SHEET_NAME'), keep_default_na=False)
-    dict = excel_data_df.to_dict(orient='index')
-    vine_list = [dict[dic] for dic in dict]
+    excel_data_df = pandas.read_excel(
+        os.getenv('FILE_PATH'), 
+        sheet_name=os.getenv('SHEET_NAME'), 
+        keep_default_na=False
+    )
+    wine_dict = excel_data_df.to_dict(orient='index')
+    vine_list = [wine_dict[dic] for dic in wine_dict]
     grouped_vines = collections.defaultdict(list)
     [grouped_vines[vine['Категория']].append(vine) for vine in vine_list]
 
