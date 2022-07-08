@@ -8,6 +8,8 @@
 - Подготовьте Exel файл с продукцией (*Файлы с изображениями размещайте в папке `images`*). Пример таблицы:
 
 ![Пример Exel-файла](https://i.ibb.co/Cm9jXJm/Example.png")
+
+#### [EXEL ФАЙЛ С ПРИМЕРА](https://dropmefiles.com/S72CD)
 - Установите зависимости командой:
 ``` bash
 pip install -r requirements.txt
