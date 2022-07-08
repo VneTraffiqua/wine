@@ -150,6 +150,10 @@ cython_debug/
 .gitattributes
 
 # Replit
+.replit
 .cache/
 .config/
 .upm/
+
+
+.index.html
