@@ -31,9 +31,9 @@ def main():
         keep_default_na=False
     )
     wine_table = excel_data_df.to_dict(orient='index')
-    wine_row = [wine_table[row] for row in wine_table]
+    row_wine_table = [wine_table[row] for row in wine_table]
     grouped_wines = collections.defaultdict(list)
-    [grouped_wines[wine['Категория']].append(wine) for wine in wine_row]
+    [grouped_wines[wine['Категория']].append(wine) for wine in row_wine_table]
 
     rendered_page = template.render(
         age=datetime.date.today().year - int(os.getenv('WORKING_SINCE')),
