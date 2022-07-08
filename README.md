@@ -9,7 +9,7 @@
 
 ![Пример Exel-файла](https://i.ibb.co/Cm9jXJm/Example.png")
 
-#### [EXEL ФАЙЛ С ПРИМЕРА](https://dropmefiles.com/S72CD)
+#### [EXEL ФАЙЛ С ПРИМЕРА](https://github.com/VneTraffiqua/wine/blob/master/wine.xlsx?raw=true)
 - Установите зависимости командой:
 ``` bash
 pip install -r requirements.txt
